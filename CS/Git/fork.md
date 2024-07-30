@@ -36,7 +36,7 @@ git remote add upstream <original_repository_url>
 
 例如给自己项目的添加上游仓库：
 ```bash
-git remote add upstream https://github.com/kangkang005/PyQt.git
+git remote add upstream https://github.com/PyQt5/PyQt.git
 ```
 添加成功后，使用以下命令可以查看远程仓库的列表：
 ```bash

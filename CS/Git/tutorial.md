@@ -620,6 +620,34 @@ Fast-forward
  1 file changed, 1 insertion(+), 1 deletion(-)
 ```
 
+#### 6.5、将本地创建的 git 关联到远程仓库, 并推送到远程仓库
+如果是用 `git init` 创建本地仓库，首先需要关联到远程仓库。
+
+```bash
+git remote add origin git@git.oschina.net:yourname/demo.git   # 添加远程仓库 origin
+```
+
+如果写错地址或者移除远程仓库：
+
+```bash
+git remote rm origin   # 删除错误的远程仓库 origin
+```
+
+获取远程库与本地同步合并（如果远程库不为空必须做这一步，否则后面的提交会失败）:
+
+```bash
+git pull --rebase origin master
+```
+
+将最新的修改推送到远程仓库:
+
+```bash
+git push -u origin master       # 第一次 push
+git push origin master
+```
+
+第一次 `push` 的时候，加上 `-u` 参数，Git 就会把本地的 `master` 分支和远程的 `master` 分支进行关联起来，以后的 `push` 操作就不再需要加上 `-u` 参数了
+
 ## 07、Git 利器 - 分支
 分支是从主线分离出去的 “副本”，分支就像是平行宇宙，可独立发展，独立编辑、提交，也可以和其他分支合并。分支是 Git 的核心必杀利器之一，分支创建、切换、删除都非常快，他非常的轻量。所以，早建分支！多用分支！
 ### 7.1、分支 Branch
@@ -983,3 +1011,6 @@ $ git cherry-pick [commit]
 
 ## 转载
 https://www.cnblogs.com/anding/p/16987769.html#scroller-33
+
+## 参考
+https://blog.csdn.net/byd_chao/article/details/82821897
